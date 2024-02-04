@@ -1,0 +1,22 @@
+version: '3'
+services:
+  app:
+    image: vkmguy/data-extraction-service
+    hostname: dataextractionservice
+    container_name: dataextractionservice
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - JAVA_OPTS=-Xmx256m
+    networks:
+      - docker-configurations_pg_net
+      - docker-configurations_kafka_net
+
+networks:
+  docker-configurations_kafka_net:
+    external: true
+  docker-configurations_pg_net:
+    external: true

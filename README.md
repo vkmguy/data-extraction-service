@@ -1,4 +1,3 @@
-# data-extraction-service
 # Stock Market Data Extraction Service
 
 ## Prerequisites
